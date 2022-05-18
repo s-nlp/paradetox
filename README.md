@@ -12,6 +12,10 @@ Dataset details
 
 In addition to all ParaDetox dataset, we also make public samples that were marked by annotators as "cannot rewrite".
 
+# Detoxification evaluation
+
+All code used for our experiments to evluation different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
+
 ## Detoxification model
 The model achieved the best results for detoxification task -- BART (base) model trained on ParaDetox dataset -- can be found in HuggingFace repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
 
