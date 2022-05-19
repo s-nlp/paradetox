@@ -3,7 +3,16 @@
 This repository contains information about Paradetox dataset -- the first parallel corpus for the detoxification task -- as well as models and evaluation methodology for the detoxification of English texts. The original paper ["ParaDetox: Detoxification with Parallel Data"](https://aclanthology.org/2022.acl-long.469/) was presented at ACL 2022 main conference.
 
 ## ParaDetox Collection Pipeline
+
+The ParaDetox Dataset collection was done via [Yandex.Toloka](https://toloka.yandex.com/) crowdsource platform. The collection was done in three steps:
+* *Task 1:* **Generation of Paraphrases**: The first crowdsourcing task asks users to eliminate toxicity in a given sentence while keeping the content.
+* *Task 2:* **Content Preservation Check**:  We show users the generated paraphrases along with their original variants and ask them to indicate if they have close meanings.
+* *Task 3:* **Toxicity Check**: Finally, we check if the workers succeeded in removing toxicity.
+
+The whole pipeline is illustrated on this schema:
 ![](https://github.com/skoltech-nlp/paradetox/blob/main/img/generation_pipeline_blue.jpg)
+
+All these steps were done to ensure high quality of the data and make the process of collection automated. For more details please refer to the original paper.
 
 ## ParaDetox Dataset
 Dataset details
@@ -14,7 +23,12 @@ In addition to all ParaDetox dataset, we also make public samples that were mark
 
 # Detoxification evaluation
 
-All code used for our experiments to evluation different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
+The automatic evaluation of the model were produced based on three parameters:
+* *style transfer accuracy* (**STA**): percentage of nontoxic outputs identified by a style classifier. We pretrained toxicity classifier on Jigsaw data and put it online in HuggingFace [repo](https://huggingface.co/SkolkovoInstitute/roberta_toxicity_classifier).
+* *content preservation* (**SIM**): cosine similarity between the embeddings of the original text and the output computed with the model of [Wieting et al. (2019)](https://aclanthology.org/P19-1427/).
+* *fluency* (**FL**): percentage of fluent sentences identified by a RoBERTa-based classifier of linguistic acceptability trained on the CoLA dataset. 
+
+All code used for our experiments to evluate different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
 
 ## Detoxification model
 The model achieved the best results for detoxification task -- BART (base) model trained on ParaDetox dataset -- can be found in HuggingFace repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
