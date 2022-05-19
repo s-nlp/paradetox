@@ -19,7 +19,7 @@ As a result,  we get paraphrases for 11,939 toxic sentences (on average 1.66 par
 
 ![](https://github.com/skoltech-nlp/paradetox/blob/main/img/paraphrase_example.png)
 
-In addition to all ParaDetox dataset, we also make public [samples](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox_cannot_rewrite.tsv) that were marked by annotators as "cannot rewrite" in *Task 1* of crowdsource pipeline.
+ParaDetox dataset can be also obtained via HuggingFace🤗 [repo](https://huggingface.co/datasets/SkolkovoInstitute/paradetox). In addition to all ParaDetox dataset, we also make public [samples](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox_cannot_rewrite.tsv) that were marked by annotators as "cannot rewrite" in *Task 1* of the crowdsource pipeline.
 
 # Detoxification evaluation
 
