@@ -24,14 +24,14 @@ In addition to all ParaDetox dataset, we also make public samples that were mark
 # Detoxification evaluation
 
 The automatic evaluation of the model were produced based on three parameters:
-* *style transfer accuracy* (**STA**): percentage of nontoxic outputs identified by a style classifier. We pretrained toxicity classifier on Jigsaw data and put it online in HuggingFace [repo](https://huggingface.co/SkolkovoInstitute/roberta_toxicity_classifier).
+* *style transfer accuracy* (**STA**): percentage of nontoxic outputs identified by a style classifier. We pretrained toxicity classifier on Jigsaw data and put it online in HuggingFace🤗 [repo](https://huggingface.co/SkolkovoInstitute/roberta_toxicity_classifier).
 * *content preservation* (**SIM**): cosine similarity between the embeddings of the original text and the output computed with the model of [Wieting et al. (2019)](https://aclanthology.org/P19-1427/).
 * *fluency* (**FL**): percentage of fluent sentences identified by a RoBERTa-based classifier of linguistic acceptability trained on the CoLA dataset. 
 
 All code used for our experiments to evluate different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
 
 ## Detoxification model
-New SOTA for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
+**New SOTA** for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace🤗 repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
 
 You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/).
 
