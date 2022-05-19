@@ -9,15 +9,10 @@ The ParaDetox Dataset collection was done via [Yandex.Toloka](https://toloka.yan
 * *Task 2:* **Content Preservation Check**:  We show users the generated paraphrases along with their original variants and ask them to indicate if they have close meanings.
 * *Task 3:* **Toxicity Check**: Finally, we check if the workers succeeded in removing toxicity.
 
-The whole pipeline is illustrated on this schema:
-![](https://github.com/skoltech-nlp/paradetox/blob/main/img/generation_pipeline_blue.jpg)
-
 All these steps were done to ensure high quality of the data and make the process of collection automated. For more details please refer to the original paper.
 
 ## ParaDetox Dataset
 As a result,  we get paraphrases for 11,939 toxic sentences (on average 1.66 paraphrases per sentence), 19,766 paraphrases total. The whole dataset can be found [here](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox.tsv). The examples of samples from ParaDetox Dataset:
-
-![](https://github.com/skoltech-nlp/paradetox/blob/main/img/paraphrase_example.png)
 
 In addition to all ParaDetox dataset, we also make public [samples](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox_cannot_rewrite.tsv) that were marked by annotators as "cannot rewrite" in *Task 1* of crowdsource pipeline.
 
