@@ -31,7 +31,7 @@ The automatic evaluation of the model were produced based on three parameters:
 All code used for our experiments to evluate different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
 
 ## Detoxification model
-The model achieved the best results for detoxification task -- BART (base) model trained on ParaDetox dataset -- can be found in HuggingFace repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
+New SOTA for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
 
 You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/).
 
