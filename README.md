@@ -15,11 +15,11 @@ The whole pipeline is illustrated on this schema:
 All these steps were done to ensure high quality of the data and make the process of collection automated. For more details please refer to the original paper.
 
 ## ParaDetox Dataset
-As a results,  we get paraphrases for 12,610 toxic sentences (on average 1.66 paraphrases per sentence), 20,437 paraphrases total. The examples of samples from ParaDetox Dataset:
+As a results,  we get paraphrases for 11,939 toxic sentences (on average 1.66 paraphrases per sentence), 19,766 paraphrases total. The whole dataset can be found in this repo [here](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox.tsv). The examples of samples from ParaDetox Dataset:
 
 ![](https://github.com/skoltech-nlp/paradetox/blob/main/img/paraphrase_example.png)
 
-In addition to all ParaDetox dataset, we also make public samples that were marked by annotators as "cannot rewrite" in *Task 1* of crowdsource pipeline.
+In addition to all ParaDetox dataset, we also make public [samples](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox_cannot_rewrite.tsv) that were marked by annotators as "cannot rewrite" in *Task 1* of crowdsource pipeline.
 
 # Detoxification evaluation
 
