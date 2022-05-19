@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+# ParaDetox: Detoxification with Parallel Data
 
-You can use the [editor on GitHub](https://github.com/skoltech-nlp/paradetox/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This repository contains information about Paradetox dataset -- the first parallel corpus for the detoxification task -- as well as models and evaluation methodology for the detoxification of English texts. The original paper ["ParaDetox: Detoxification with Parallel Data"](https://aclanthology.org/2022.acl-long.469/) was presented at ACL 2022 main conference.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## ParaDetox Collection Pipeline
 
-### Markdown
+The ParaDetox Dataset collection was done via [Yandex.Toloka](https://toloka.yandex.com/) crowdsource platform. The collection was done in three steps:
+* *Task 1:* **Generation of Paraphrases**: The first crowdsourcing task asks users to eliminate toxicity in a given sentence while keeping the content.
+* *Task 2:* **Content Preservation Check**:  We show users the generated paraphrases along with their original variants and ask them to indicate if they have close meanings.
+* *Task 3:* **Toxicity Check**: Finally, we check if the workers succeeded in removing toxicity.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The whole pipeline is illustrated on this schema:
+![](https://github.com/skoltech-nlp/paradetox/blob/main/img/generation_pipeline_blue.jpg)
 
-```markdown
-Syntax highlighted code block
+All these steps were done to ensure high quality of the data and make the process of collection automated. For more details please refer to the original paper.
 
-# Header 1
-## Header 2
-### Header 3
+## ParaDetox Dataset
+As a result,  we get paraphrases for 11,939 toxic sentences (on average 1.66 paraphrases per sentence), 19,766 paraphrases total. The whole dataset can be found [here](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox.tsv). The examples of samples from ParaDetox Dataset:
 
-- Bulleted
-- List
+![](https://github.com/skoltech-nlp/paradetox/blob/main/img/paraphrase_example.png)
 
-1. Numbered
-2. List
+In addition to all ParaDetox dataset, we also make public [samples](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox_cannot_rewrite.tsv) that were marked by annotators as "cannot rewrite" in *Task 1* of crowdsource pipeline.
 
-**Bold** and _Italic_ and `Code` text
+# Detoxification evaluation
 
-[Link](url) and ![Image](src)
+The automatic evaluation of the model were produced based on three parameters:
+* *style transfer accuracy* (**STA**): percentage of nontoxic outputs identified by a style classifier. We pretrained toxicity classifier on Jigsaw data and put it online in HuggingFace🤗 [repo](https://huggingface.co/SkolkovoInstitute/roberta_toxicity_classifier).
+* *content preservation* (**SIM**): cosine similarity between the embeddings of the original text and the output computed with the model of [Wieting et al. (2019)](https://aclanthology.org/P19-1427/).
+* *fluency* (**FL**): percentage of fluent sentences identified by a RoBERTa-based classifier of linguistic acceptability trained on the [CoLA dataset](https://nyu-mll.github.io/CoLA/). 
+
+All code used for our experiments to evluate different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
+
+## Detoxification model
+**New SOTA** for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace🤗 repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
+
+You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/).
+
+## Citation
+
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/skoltech-nlp/paradetox/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+@inproceedings{logacheva-etal-2022-paradetox,
+    title = "{P}ara{D}etox: Detoxification with Parallel Data",
+    author = "Logacheva, Varvara  and
+      Dementieva, Daryna  and
+      Ustyantsev, Sergey  and
+      Moskovskiy, Daniil  and
+      Dale, David  and
+      Krotova, Irina  and
+      Semenov, Nikita  and
+      Panchenko, Alexander",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.469",
+    pages = "6804--6818",
+    abstract = "We present a novel pipeline for the collection of parallel data for the detoxification task. We collect non-toxic paraphrases for over 10,000 English toxic sentences. We also show that this pipeline can be used to distill a large existing corpus of paraphrases to get toxic-neutral sentence pairs. We release two parallel corpora which can be used for the training of detoxification models. To the best of our knowledge, these are the first parallel datasets for this task.We describe our pipeline in detail to make it fast to set up for a new language or domain, thus contributing to faster and easier development of new parallel resources.We train several detoxification models on the collected data and compare them with several baselines and state-of-the-art unsupervised approaches. We conduct both automatic and manual evaluations. All models trained on parallel data outperform the state-of-the-art unsupervised models by a large margin. This suggests that our novel datasets can boost the performance of detoxification systems.",
+}
+```
