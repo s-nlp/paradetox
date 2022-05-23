@@ -33,7 +33,7 @@ All code used for our experiments to evluate different detoxifcation models can 
 ## Detoxification model
 **New SOTA** for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace🤗 repository [here](https://huggingface.co/SkolkovoInstitute/bart-base-detox).
 
-You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/).
+You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/) and telegram [bot](https://t.me/rudetoxifierbot).
 
 ## Citation
 
