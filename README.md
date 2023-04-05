@@ -63,4 +63,4 @@ You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/) a
 
 If you find some issue, do not hesitate to add it to [Github Issues](https://github.com/skoltech-nlp/paradetox/issues).
 
-For any questions, please contact: Daryna Dementieva (daryna.dementieva@skoltech.ru)
+For any questions and the **test part** of the data, please contact: Daryna Dementieva (dardem96@gmail.com)
