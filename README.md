@@ -1,6 +1,6 @@
-# ParaDetox: Detoxification with Parallel Data
+# ParaDetox: Text Detoxification with Parallel Data
 
-This repository contains information about Paradetox dataset -- the first parallel corpus for the detoxification task -- as well as models and evaluation methodology for the detoxification of English texts. The original paper ["ParaDetox: Detoxification with Parallel Data"](https://aclanthology.org/2022.acl-long.469/) was presented at ACL 2022 main conference.
+This repository contains information about Paradetox dataset -- the first parallel corpus for the text detoxification task -- as well as models and evaluation methodology for the text detoxification of English texts. The original paper ["ParaDetox: Detoxification with Parallel Data"](https://aclanthology.org/2022.acl-long.469/) was presented at ACL 2022 main conference.
 
 ## ParaDetox Collection Pipeline
 
