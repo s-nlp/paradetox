@@ -58,7 +58,25 @@ You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/) a
     abstract = "We present a novel pipeline for the collection of parallel data for the detoxification task. We collect non-toxic paraphrases for over 10,000 English toxic sentences. We also show that this pipeline can be used to distill a large existing corpus of paraphrases to get toxic-neutral sentence pairs. We release two parallel corpora which can be used for the training of detoxification models. To the best of our knowledge, these are the first parallel datasets for this task.We describe our pipeline in detail to make it fast to set up for a new language or domain, thus contributing to faster and easier development of new parallel resources.We train several detoxification models on the collected data and compare them with several baselines and state-of-the-art unsupervised approaches. We conduct both automatic and manual evaluations. All models trained on parallel data outperform the state-of-the-art unsupervised models by a large margin. This suggests that our novel datasets can boost the performance of detoxification systems.",
 }
 ```
-
+and the first version of the data collection pipeline:
+```
+@inproceedings{dementieva2021crowdsourcing,
+    title = "Crowdsourcing of Parallel Corpora: the Case of Style Transfer for Detoxification",
+    author = {Dementieva, Daryna
+                 and Ustyantsev, Sergey
+                 and Dale, David 
+                 and Kozlova, Olga
+                 and Semenov, Nikita
+                 and Panchenko, Alexander
+                 and Logacheva, Varvara},
+    booktitle = "Proceedings of the 2nd Crowd Science Workshop: Trust, Ethics, and Excellence in Crowdsourced Data Management at Scale co-located with 47th International Conference on Very Large Data Bases (VLDB 2021 (https://vldb.org/2021/))",
+    year = "2021",
+    address = "Copenhagen, Denmark",
+    publisher = "CEUR Workshop Proceedings",
+    pages = "35--49",
+    url={http://ceur-ws.org/Vol-2932/paper2.pdf}
+}
+```
 ## Contacts
 
 If you find some issue, do not hesitate to add it to [Github Issues](https://github.com/s-nlp/paradetox/issues).
