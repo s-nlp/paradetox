@@ -21,6 +21,13 @@ As a result,  we get paraphrases for 11,939 toxic sentences (on average 1.66 par
 
 ParaDetox dataset can be also obtained via HuggingFace🤗 [repo](https://huggingface.co/datasets/s-nlp/paradetox). In addition to all ParaDetox dataset, we also make public [samples](https://github.com/skoltech-nlp/paradetox/blob/main/paradetox/paradetox_cannot_rewrite.tsv) that were marked by annotators as "cannot rewrite" in *Task 1* of the crowdsource pipeline.
 
+### Annotation Steps Data
+
+We also release publically 🤗 the results of data collection from each crowdsourcing annotation task:
+* *Task 1: Generation of Paraphrases*: [s-nlp/en_non_detoxified](https://huggingface.co/datasets/s-nlp/en_non_detoxified)
+* *Task 2: Content Preservation Check*: [s-nlp/en_paradetox_content](https://huggingface.co/datasets/s-nlp/en_paradetox_content)
+* *Task 3: Toxicity Check*: [s-nlp/en_paradetox_toxicity](https://huggingface.co/datasets/s-nlp/en_paradetox_toxicity)
+
 # Detoxification evaluation
 
 The automatic evaluation of the model were produced based on three parameters:
@@ -31,9 +38,9 @@ The automatic evaluation of the model were produced based on three parameters:
 All code used for our experiments to evluate different detoxifcation models can be run via Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xTqbx7IPF8bVL2bDCfQSDarA43mIPefE?usp=sharing)
 
 ## Detoxification model
-**New SOTA** for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace🤗 repository [here](https://huggingface.co/s-nlp/bart-base-detox).
+**The first seq2seq SOTA** for detoxification task -- BART (base) model trained on ParaDetox dataset -- we released online in HuggingFace🤗 repository [here](https://huggingface.co/s-nlp/bart-base-detox).
 
-You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/) and telegram [bot](https://t.me/rudetoxifierbot).
+[Old Versions] You can also check out our [demo](https://detoxifier.nlp.zhores.net/junction/) and telegram [bot](https://t.me/rudetoxifierbot).
 
 ## Citation
 
